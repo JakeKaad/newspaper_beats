@@ -1,12 +1,13 @@
 <h3> Gnarnia's Beats </h3>
 
 <form class='form-inline' role='form'>
-	<label for='beatName'>Search Beats</label>
-	<input type='text' ng-model='query'>
+	<label for='beatName'>Search Beats by Name</label>
+	<input type='text' ng-model='beatName'>
+	<
 </form>
 
 <ul class="list-unstyled">
-	<li ng-repeat='item in BeatsFactory.beats | filter:{ name: query}'>
+	<li ng-repeat='item in BeatsFactory.beats | filter:{ name: beatName}'>
 		<div class='well beat-well'>
 			<div class='col-md-4'>
 				<h5> {{ item.name }} </h5>
