@@ -1,0 +1,24 @@
+<h3> Gnarnia's Beats </h3>
+
+<form class='form-inline' role='form'>
+	<label for='beatName'>Search Beats</label>
+	<input type='text' ng-model='query'>
+</form>
+
+<ul class="list-unstyled">
+	<li ng-repeat='item in BeatsFactory.beats | filter:{ name: query}'>
+		<div class='well beat-well'>
+			<div class='col-md-4'>
+				<h5> {{ item.name }} </h5>
+			</div>
+			<div class="col-md-8">
+				<h5>Reporters on the Beat:</h5>
+				<ul class="list-unstyled"> 
+					<li class='col-sm-3' ng-repeat='reporter in item.reporters'>
+						{{ reporter.name }}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</li>
+</ul>

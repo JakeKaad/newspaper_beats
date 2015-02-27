@@ -1,16 +1,17 @@
-newspaper.factory('ReporterFactory', function ReporterFactory() {
-  factory = {};
+newspaper.factory('ReportersFactory', function ReportersFactory() {
+  var factory = {};
   factory.reporters = [];
   factory.Reporter = {};
 
   factory.newReporter = function(name, yearsEmployed, birthday) {
-    reporter = Object.create(factory.Reporter);
+    var reporter = Object.create(factory.Reporter);
     reporter.name = name;
-    repoter.yearsEmployed = yearsEmployed;
+    reporter.yearsEmployed = yearsEmployed;
     reporter.birthday = birthday;
     reporter.id = (factory.reporters.length + 1)
     reporter.beats = [];
     factory.reporters.push(reporter);
+    return reporter;
   };
 
   return factory;
